@@ -32,10 +32,12 @@ CREATE TABLE public.dept_manager
     dept_no varchar(5) NOT NULL,
     emp_no integer NOT NULL,
 	foreign key (dept_no) references departments (dept_no),
-	foreign key (emp_no) references employees (emp_no)
+	foreign key (emp_no) references employees (emp_no),
+	PRIMARY KEY (emp_no)
 );
 
-
+--select* from dept_emp
+--drop table dept_emp;
 CREATE TABLE public.dept_emp
 (
     emp_no integer NOT NULL,
@@ -43,10 +45,11 @@ CREATE TABLE public.dept_emp
    foreign key (dept_no) references departments (dept_no),
 	foreign key (emp_no) references employees (emp_no)
 );
-
+--drop table dept_emp;
 CREATE TABLE public.salaries
 (
     emp_no integer NOT NULL,
     salary money NOT NULL,
-    foreign key (emp_no) references employees (emp_no)
+    foreign key (emp_no) references employees (emp_no),
+	PRIMARY KEY (emp_no)
 );
